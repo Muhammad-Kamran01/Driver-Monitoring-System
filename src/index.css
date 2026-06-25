@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+/* Cartography Radar Dots Grid */
+.bg-grid {
+  background-image: radial-gradient(circle, rgba(99, 102, 241, 0.15) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* AI Camera Video scanline look */
+.bg-scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg, 
+    rgba(255, 0, 0, 0.06), 
+    rgba(0, 255, 0, 0.02), 
+    rgba(0, 0, 255, 0.06)
+  );
+  background-size: 100% 4px, 3px 100%;
+}
+
+/* Elegant animations for simulations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* PDF/Print Layout Overrides */
+@media print {
+  body {
+    background-color: white !important;
+    color: #0f172a !important;
+  }
+  
+  /* Hide elements not needed on reports */
+  header, nav, footer, button, select, input, form, .print\:hidden {
+    display: none !important;
+  }
+  
+  main {
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Force display components on print page */
+  #incident-audit-module, #analytics-module, #safety-coach-module {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    margin-bottom: 24px !important;
+    background-color: white !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+    padding: 16px !important;
+  }
+
+  h1, h2, h3, h4, span, p, td, th {
+    color: #0f172a !important;
+  }
+
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+
+  th {
+    background-color: #f1f5f9 !important;
+    border-bottom: 2px solid #cbd5e1 !important;
+  }
+
+  td, th {
+    padding: 8px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+}
+

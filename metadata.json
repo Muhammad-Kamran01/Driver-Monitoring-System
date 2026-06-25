@@ -1,0 +1,6 @@
+{
+  "name": "Distracted Driving Behavior Detection",
+  "description": "Real-time distracted driving monitoring dashboard featuring real-time telemetry, visual behavioral simulations, alert builder, driver profiling, geofencing coordinates mapping, rules configurator, and detailed PDF/CSV report exports.",
+  "requestFramePermissions": ["camera", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
